@@ -68,6 +68,25 @@ public class UnmannedShip extends SpaceShip{
     public void setCountry(String country) {
         this.country = country;
     }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Nombre = " + name + "Potencia = " + power + "Combustible = " + fuel + "Peso = " + weight + "Velocidad = " + speed + "Pais = " + country;
+    }
+
+    @Override
+    public String type() {
+        return "Nave no tripulada";
+    }
+
+    @Override
+    public String purpose() {
+        return "Exoloracion espacial";
+    }
     
     
 }
