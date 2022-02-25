@@ -26,7 +26,7 @@ public class Main {
             }while(option<1 || option>3);
             
             switch(option){
-                case 1://tripulada
+                case 1: CreateMannedShip(); //tripulada
                     break;
                 case 2://lanzadera
                     break;
@@ -40,11 +40,73 @@ public class Main {
         }while(answer=='s'|| answer=='S');
                 
        }
+    //Nave tripulada
+    public static void CreateMannedShip(){
+     String name,fuel,country;
+     int power;
+     double weight;
+     float speed;
+        System.out.print("Digite el Nombre de la Nave: ");
+        name = entrance.nextLine();
+        System.out.print("Digite la potencia de la Nave: ");
+        power = entrance.nextInt();
+        System.out.println("Digite el combustible que utiliza la Nave: ");
+        fuel = entrance.nextLine();
+        System.out.println("Digite el peso de la Nave: ");
+        weight = entrance.nextDouble();
+        System.out.println("Digite la velocidad de la Nave: ");
+        speed = entrance.nextFloat();
+        System.out.println("Digite el pais de la Nave: ");
+        country = entrance.nextLine();
+     
+        MannedShip mannedShip = new MannedShip(name,power,fuel,weight,speed,country);
+        //guardamos la nave dentro del arreglo
+        spaceShip.add(mannedShip);
+    }
+    //Nave no tripulada
+    public static void CreateUnmannedShip(){
+     String name,fuel,country;
+     int power;
+     double weight;
+     float speed;
+        System.out.print("Digite el Nombre de la Nave: ");
+        name = entrance.nextLine();
+        System.out.print("Digite la potencia de la Nave: ");
+        power = entrance.nextInt();
+        System.out.println("Digite el combustible que utiliza la Nave: ");
+        fuel = entrance.nextLine();
+        System.out.println("Digite el peso de la Nave: ");
+        weight = entrance.nextDouble();
+        System.out.println("Digite la velocidad de la Nave: ");
+        speed = entrance.nextFloat();
+        System.out.println("Digite el pais de la Nave: ");
+        country = entrance.nextLine();
+     
+        UnmannedShip unmannedShip = new UnmannedShip(name,power,fuel,weight,speed,country);
+        //guardamos la nave dentro del arreglo
+        spaceShip.add(unmannedShip);
+    }
     
-    public static void Mostrar(){
-        
-       for(SpaceShip space: spaceShip){
-           System.out.println("termino"+space.type());
-       }
+    public static void CreateShuttleShip(){
+     String name,fuel,country;
+     int power;
+     double weight;
+     float speed;
+        System.out.print("Digite el Nombre de la Nave: ");
+        name = entrance.nextLine();
+        System.out.print("Digite la potencia de la Nave: ");
+        power = entrance.nextInt();
+        System.out.println("Digite el combustible que utiliza la Nave: ");
+        fuel = entrance.nextLine();
+        System.out.println("Digite el peso de la Nave: ");
+        weight = entrance.nextDouble();
+        System.out.println("Digite la velocidad de la Nave: ");
+        speed = entrance.nextFloat();
+        System.out.println("Digite el pais de la Nave: ");
+        country = entrance.nextLine();
+     
+        ShuttleShip shuttleShip = new ShuttleShip(name,power,fuel,weight,speed,country);
+        //guardamos la nave dentro del arreglo
+        spaceShip.add(shuttleShip);
     }
 }
