@@ -71,5 +71,5 @@ public abstract class SpaceShip {
     
     //metodo abstract
     public abstract String type();
-    public abstract String destination();
+    public abstract String purpose();
 }
