@@ -85,7 +85,7 @@ public class UnmannedShip extends SpaceShip{
 
     @Override
     public String purpose() {
-        return "Exoloracion espacial";
+        return "Exploracion espacial";
     }
     
     
