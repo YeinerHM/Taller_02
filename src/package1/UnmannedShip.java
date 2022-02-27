@@ -71,11 +71,11 @@ public class UnmannedShip extends SpaceShip{
 
     /**
      *
-     * @return
+     * Metodos a implementar clase abstracta e impresion de la nave creada
      */
     @Override
     public String toString() {
-        return "Nombre = " + name + "Potencia = " + power + "Combustible = " + fuel + "Peso = " + weight + "Velocidad = " + speed + "Pais = " + country;
+        return "\nNombre = "+name+"\nPotencia = "+power+"\nCombustible = "+fuel+"\nPeso = "+weight+"\nVelocidad = "+speed+"\nPais = "+country;
     }
 
     @Override

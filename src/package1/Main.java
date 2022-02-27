@@ -1,6 +1,11 @@
 
 package package1;
-
+/*
+ * Clase principal donde creamos naves espaciales de diferentes tipos.
+ * El do while es el ciclo que se repetira hasta que el usuario escoja la opcion diferente a "s" o "S" (Crear naves)
+ * El swith case con los tipos de naves a crear y guardarlos en el arreglo dinamico SpaceShip.
+ * @Author Yeiner Hidalgo Molina
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,10 +14,16 @@ public class Main {
     static Scanner entrance = new Scanner (System.in);
     
     public static void main(String[] args) {
-       //crear una Nave
+     /**
+       *
+       * Crear una Nave
+       */
        CreateShip();
        
-       // mostrar los metodos abstractos
+     /**
+       *
+       * Mostrar metodos abstractos Type(Tipo), purpose(Proposito)
+       */
        ShowAbstractMethods();
     }
     public static void CreateShip(){
@@ -29,12 +40,9 @@ public class Main {
             }while(option<1 || option>3);
             
             switch(option){
-                case 1: CreateMannedShip(); //tripulada
-                    break;
-                case 2:CreateShuttleShip(); //lanzadera
-                    break;
-                case 3: CreateUnmannedShip(); //no tripulada
-                    break;                
+                case 1 -> CreateMannedShip(); //tripulada
+                case 2 -> CreateShuttleShip(); //lanzadera
+                case 3 -> CreateUnmannedShip(); //no tripulada
             }
             
             System.out.print("\nDesea Crear otra Nave (S/N) : ");
@@ -43,80 +51,100 @@ public class Main {
         }while(answer=='s'|| answer=='S');
                 
        }
-    //Nave tripulada
+    /**
+     *
+     * Nave tripulada
+     */
     public static void CreateMannedShip(){
      String name,fuel,country;
      int power;
      double weight;
      float speed;
-        System.out.print("Digite el Nombre de la Nave: ");
+        entrance.nextLine();
+        System.out.println("Digite el Nombre de la Nave: ");
         name = entrance.nextLine();
-        System.out.print("Digite la potencia de la Nave: ");
+        System.out.println("Digite la potencia de la Nave: ");
         power = entrance.nextInt();
+        entrance.nextLine();
         System.out.println("Digite el combustible que utiliza la Nave: ");
         fuel = entrance.nextLine();
         System.out.println("Digite el peso de la Nave: ");
         weight = entrance.nextDouble();
         System.out.println("Digite la velocidad de la Nave: ");
         speed = entrance.nextFloat();
+        entrance.nextLine();
         System.out.println("Digite el pais de la Nave: ");
         country = entrance.nextLine();
      
         MannedShip mannedShip = new MannedShip(name,power,fuel,weight,speed,country);
-        //guardamos la nave dentro del arreglo
-        spaceShip.add(mannedShip);
+        
+        spaceShip.add(mannedShip);//guardamos la nave dentro del arreglo
     }
     
-    //Nave lanzadera
+    /**
+     *
+     * Nave Lanzadera
+     */
     public static void CreateShuttleShip(){
      String name,fuel,country;
      int power;
      double weight;
      float speed;
-        System.out.print("Digite el Nombre de la Nave: ");
+        entrance.nextLine();
+        System.out.println("Digite el Nombre de la Nave: ");
         name = entrance.nextLine();
-        System.out.print("Digite la potencia de la Nave: ");
+        System.out.println("Digite la potencia de la Nave: ");
         power = entrance.nextInt();
+        entrance.nextLine();
         System.out.println("Digite el combustible que utiliza la Nave: ");
         fuel = entrance.nextLine();
         System.out.println("Digite el peso de la Nave: ");
         weight = entrance.nextDouble();
         System.out.println("Digite la velocidad de la Nave: ");
         speed = entrance.nextFloat();
+        entrance.nextLine();
         System.out.println("Digite el pais de la Nave: ");
         country = entrance.nextLine();
      
         ShuttleShip shuttleShip = new ShuttleShip(name,power,fuel,weight,speed,country);
-        //guardamos la nave dentro del arreglo
-        spaceShip.add(shuttleShip);
+        
+        spaceShip.add(shuttleShip);//guardamos la nave dentro del arreglo
     }
     
-    //Nave no tripulada
+    /**
+     *
+     * Nave no tripulada
+     */
     public static void CreateUnmannedShip(){
      String name,fuel,country;
      int power;
      double weight;
      float speed;
-        System.out.print("Digite el Nombre de la Nave: ");
+        entrance.nextLine();
+        System.out.println("Digite el Nombre de la Nave: ");
         name = entrance.nextLine();
-        System.out.print("Digite la potencia de la Nave: ");
+        System.out.println("Digite la potencia de la Nave: ");
         power = entrance.nextInt();
+        entrance.nextLine();
         System.out.println("Digite el combustible que utiliza la Nave: ");
         fuel = entrance.nextLine();
         System.out.println("Digite el peso de la Nave: ");
         weight = entrance.nextDouble();
         System.out.println("Digite la velocidad de la Nave: ");
         speed = entrance.nextFloat();
+        entrance.nextLine();
         System.out.println("Digite el pais de la Nave: ");
         country = entrance.nextLine();
      
         UnmannedShip unmannedShip = new UnmannedShip(name,power,fuel,weight,speed,country);
-        //guardamos la nave dentro del arreglo
-        spaceShip.add(unmannedShip);
+        
+        spaceShip.add(unmannedShip);//guardamos la nave dentro del arreglo
     }
-    
+    /**
+     *
+     * Recorriendo el arreglo para mostrar las naves creadas
+     */
      public static void ShowAbstractMethods(){
-         //recorriendo el arreglo para mostrar las naves creadas
          for (SpaceShip space : spaceShip){
              System.out.println(space.toString());
              System.out.println("Tipo de nave = "+space.type());
